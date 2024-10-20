@@ -5,7 +5,7 @@ const route = express.Router();
 
 route.post('/task',authMiddleware,AddTodo);
 route.get('/task',authMiddleware,GetTodo);
-route.post('/task/:taskId',authMiddleware,UpdateTodo);
+route.put('/task/:taskId',authMiddleware,UpdateTodo);
 route.delete('/task/:taskId',authMiddleware,DeleteTodo);
 
 module.exports = route;
