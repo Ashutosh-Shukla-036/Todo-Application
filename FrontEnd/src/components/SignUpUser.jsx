@@ -9,9 +9,11 @@ export const SignUpUser = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [signupstatus, setSignupstatus] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
 
     const onSubmitHandler = async (e) => {
         e.preventDefault();
+        setIsLoading(true); 
         try {
             await SignUp(username, email, password, setSignupstatus);
             navigate("/Login");
@@ -20,6 +22,8 @@ export const SignUpUser = () => {
             setPassword("");
         } catch(error) {
             setSignupstatus("Internal server error:" + error);
+        } finally {
+            setIsLoading(false); 
         }
     };
 
@@ -29,6 +33,7 @@ export const SignUpUser = () => {
         <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
         <button type="submit">Submit</button>
+        {isLoading && <p>Signing Up...</p>}
         {signupstatus && <p>{signupstatus}</p>}
         <p>Already Registered<Link to={"/Login"}>Click here to Login</Link></p>
         </div>
