@@ -29,7 +29,7 @@ export const Login = ({ onLoginSuccess }) => {
             <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
             <button type="submit">Submit</button>
-            {isLoading && <p>Signing Up...</p>}
+            {isLoading && <p>Logging In...</p>}
             <p>Not yet Registered<Link to={'/signup'}>Click here to SignUp</Link></p>
             {errorMessage && <p>{errorMessage}</p>}
             </div>
