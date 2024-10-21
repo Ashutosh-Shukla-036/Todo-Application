@@ -9,8 +9,7 @@ exports.SignUp = async (req,res) => {
 
     if (!Validate.success) {
         return res.status(400).json({
-            message: 'Invalid Input',
-            error: Validate.error.errors
+            message: 'Invalid Input'
         })
     }
 
