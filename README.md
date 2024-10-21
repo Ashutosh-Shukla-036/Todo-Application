@@ -21,18 +21,83 @@ This is a full-stack MERN (MongoDB, Express, React, Node.js) application. The ba
 ## Project Structure
 
 ```bash
+Todo
 ├── BackEnd
 │   ├── controller         # Contains the application logic (Controllers for handling requests)
+│   │   ├── taskController.js    # Controller handling task-related operations (CRUD for todos)
+│   │   ├── userController.js    # Controller handling user authentication (signup, login)
+│   │
 │   ├── db                 # Database configuration (e.g., MongoDB connection)
+│   │   ├── db.js               # MongoDB connection setup using Mongoose
+│   │
 │   ├── middlewares        # Custom middlewares (Authentication, Error handling)
+│   │   ├── authMiddleware.js    # Middleware for verifying JWT tokens and protecting routes
+│   │   ├── errorMiddleware.js   # Global error handler
+│   │
 │   ├── models             # Mongoose models for MongoDB
+│   │   ├── Task.js             # Task schema and model for todos
+│   │   ├── User.js             # User schema and model for authentication
+│   │
 │   ├── routes             # API route definitions
-│   ├── .env               # Environment variables (Not recommended to commit this file)
-│   ├── .gitignore         # Specifies files to be ignored by Git
-│   ├── index.js           # Entry point for the backend (Server setup)
+│   │   ├── taskRoutes.js        # Routes related to todos (CRUD operations)
+│   │   ├── userRoutes.js        # Routes related to user authentication (signup, login)
+│   │
+│   ├── .gitignore         # Specifies files to be ignored by Git (e.g., node_modules, .env)
+│   │
+│   ├── index.js           # Entry point for the backend (Server setup with Express.js)
+│   │   ├── Sets up the Express server
+│   │   ├── Connects to MongoDB
+│   │   ├── Includes routes and middlewares
+│   │
 │   ├── package.json       # Backend dependencies and scripts
+│   │   ├── express              # Web framework
+│   │   ├── mongoose             # MongoDB ORM
+│   │   ├── bcryptjs             # For password hashing
+│   │   ├── jsonwebtoken         # For handling JWT authentication
+│   │   ├── dotenv               # For environment variable management
+│
 ├── FrontEnd  
-└── README.md              # Project documentation
+│   ├── src
+│   │   ├── assets              # Contains assets like images, icons, etc.
+│   │   │
+│   │   ├── components          # React Components for different parts of the app
+│   │   │   ├── About.jsx            # About page component
+│   │   │   ├── CreateTodo.jsx       # Component to create a new todo
+│   │   │   ├── DisplayTodo.jsx      # Component for displaying todos
+│   │   │   ├── Home.jsx             # Home page component
+│   │   │   ├── Login.jsx            # Login page component
+│   │   │   ├── NavBar.jsx           # Navigation bar component
+│   │   │   ├── SignUpUser.jsx       # Signup page component
+│   │   │   ├── TodoList.jsx         # Component to list all todos
+│   │   │   ├── UpdateTodoForm.jsx   # Form to update existing todos
+│   │   │
+│   │   ├── API_Calls            # API calls to the backend server
+│   │   │   ├── AddTodo.jsx          # API call for adding new todo
+│   │   │   ├── fetchTodos.jsx       # API call for fetching todos
+│   │   │   ├── LogIn.jsx            # API call for logging in a user
+│   │   │   ├── RemoveTodo.jsx       # API call for deleting a todo
+│   │   │   ├── Signup.jsx           # API call for signing up a user
+│   │   │   ├── UpdateTodo.jsx       # API call for updating a todo
+│   │   │
+│   │   ├── App.js                # Main React component that handles routing and renders pages
+│   │   ├── index.js              # Entry point for React (ReactDOM.render to mount the app)
+│   │   ├── App.css               # Global CSS styles for the React app
+│   │
+│   ├── public/
+│   │   ├── index.html            # Main HTML template for React app
+│   │   ├── manifest.json         # Web app manifest for PWA capabilities
+│   │   ├── favicon.ico           # Icon for the app
+│   │
+│   ├── package.json           # Frontend dependencies and scripts
+│   │   ├── react                  # React library
+│   │   ├── fetch                  # For making HTTP requests to backend APIs
+│   │   ├── react-router-dom       # For handling client-side routing
+│   │   ├── jwt-decode             # For decoding JWT tokens on the client side
+│   │
+│   ├── .gitignore             # Specifies files to be ignored by Git (e.g., node_modules, build files)
+│
+└── README.md                  # Project documentation for both frontend and backend (main README)
+
 ```
 
 ---
