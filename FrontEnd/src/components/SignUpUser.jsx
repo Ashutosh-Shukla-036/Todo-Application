@@ -16,7 +16,7 @@ export const SignUpUser = () => {
         setIsLoading(true); 
         try {
             await SignUp(username, email, password, setSignupstatus);
-            navigate("/Login");
+            navigate("/login");
             setUsername("");
             setEmail("");
             setPassword("");

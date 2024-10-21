@@ -19,7 +19,6 @@ export const UpdateTodoForm = ({ todo, onTodoUpdated, onCancel }) => {
     try {
       await UpdateTodo(todo._id, title, description, status ); 
       onTodoUpdated(); 
-      console.log(status);
       onCancel();
     } catch (error) {
       console.error("Failed to update todo:"+ error);

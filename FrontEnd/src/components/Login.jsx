@@ -15,7 +15,7 @@ export const Login = ({ onLoginSuccess }) => {
         try {
             await LogIn(email, password);
             onLoginSuccess(); 
-            navigate('/Home');
+            navigate('/');
         } catch (error) {
             setErrorMessage("Internal server error: " + error.message);
         } finally {
