@@ -201,6 +201,12 @@ cd Todo-Application
 
 ### Frontend
 
+- **React** -  Frontend library for building UI components
+- **fetch** - For making API calls
+- **CSS** - For styling the components
+- **JavaScript (ES6+)** - Programming logic
+- **HTML5** - Markup language
+
 ---
 
 ## Environment Variables
