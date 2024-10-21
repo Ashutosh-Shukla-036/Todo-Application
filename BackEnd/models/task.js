@@ -4,7 +4,7 @@ const { z } = require('zod')
 const ValidateTask = z.object({
     title: z.string().min(1,{message: 'Title is required'}),
     description: z.string().min(1,{message: 'Description is required'}),
-    status: z.enum(['pending','in-progess','completed'], {message: 'Status should be in pending, in-progess or completed state'})
+    status: z.enum(['pending','in-progress','completed'], {message: 'Status should be in pending, in-progess or completed state'})
 });
 
 const taskSchema = mongoose.Schema({
