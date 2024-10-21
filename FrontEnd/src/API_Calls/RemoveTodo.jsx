@@ -1,7 +1,7 @@
 export const RemoveTodo = async ( taskID , setDeleteMessage ) => {
     const token = localStorage.getItem('token');
 
-    const response = await fetch(`http://localhost:3000/task/${taskID}` , {
+    const response = await fetch(`https://todobackend-3xht.onrender.com/task/${taskID}` , {
         method: "DELETE",
         headers: {
             "Authorization": `Bearer ${token}`, 

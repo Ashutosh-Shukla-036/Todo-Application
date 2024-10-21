@@ -1,6 +1,6 @@
 export const UpdateTodo = async ( taskId, title, description, status ) => {
     const token = localStorage.getItem('token');
-    const response = await fetch(`http://localhost:3000/task/${taskId}`, {
+    const response = await fetch(`https://todobackend-3xht.onrender.com/task/${taskId}`, {
         method: "PUT",
         headers: {
             "Authorization": `Bearer ${token}`, 
