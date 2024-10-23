@@ -3,13 +3,16 @@ const cors = require('cors');
 const connectDB = require('./db');
 const auth = require('./routes/userRoute')
 const task = require('./routes/taskRoute')
-const app = express()
+const app = express();
+const path = require('path');
+
 
 app.use(express.json());
 app.use(cors({
     origin: 'https://todoapplication-five.vercel.app', 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
 }));
+app.use('/favicon.ico', express.static(path.join(__dirname, 'public', 'favicon.ico')))
 connectDB();
 
 app.get('/',(req,res) => {
