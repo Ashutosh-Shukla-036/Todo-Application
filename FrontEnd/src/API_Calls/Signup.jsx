@@ -8,6 +8,7 @@ export const SignUp = async ( username, email, password, setSignupstatus ) => {
     });
 
     if (!response.ok) {
+        const data = await response.json();
         const errorMessage = data.errors ? data.errors.map(err => err.message).join(', ') : "Something went wrong";
         throw new Error(errorMessage);
     }
