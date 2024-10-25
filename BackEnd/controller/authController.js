@@ -9,9 +9,9 @@ exports.SignUp = async (req,res) => {
 
     if (!Validate.success) {
         return res.status(400).json({
-            message: 'Invalid Input'
-        })
-    }
+            errors: Validate.error.errors
+        });
+    }    
 
     const { username , email , password } = Validate.data;
 
