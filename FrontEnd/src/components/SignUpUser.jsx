@@ -21,7 +21,7 @@ export const SignUpUser = () => {
             setEmail("");
             setPassword("");
         } catch(error) {
-            setSignupstatus("Internal server error:" + error);
+            setSignupstatus(`Error: ${error.message}`);
         } finally {
             setIsLoading(false); 
         }
