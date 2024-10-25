@@ -27,6 +27,7 @@ exports.SignUp = async (req,res) => {
         await newUser.save();
         res.status(201).json("New user created");
     } catch(error) {
+        console.error(error);
         res.status(500).json({ message: `Internal server error ${error.message}` });
     }
 }
