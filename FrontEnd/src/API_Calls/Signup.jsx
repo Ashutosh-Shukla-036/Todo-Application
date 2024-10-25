@@ -7,9 +7,9 @@ export const SignUp = async ( username, email, password, setSignupstatus ) => {
         body: JSON.stringify({ username, email, password })
     });
 
-    if(!response.ok) {
+    if (!response.ok) {
         const data = await response.json();
-        throw new Error(data.message);
+        throw new Error(JSON.stringify(data.errors));  // Convert the errors array to a string for display
     }
 
     const data = await response.json();
