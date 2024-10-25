@@ -8,10 +8,10 @@ export const SignUp = async ( username, email, password, setSignupstatus ) => {
     });
 
     if(!response.ok) {
-        const data = response.json();
+        const data = await response.json();
         throw new Error(data.message);
     }
 
-    const data = response.json();
+    const data = await response.json();
     setSignupstatus(data.message);
 }
